@@ -1,5 +1,8 @@
 class User < ActiveRecord::Base
-	has_many :tweets
+	has_many :tweets, dependent: :destroy
+	has_many :followed_users, through: :relationships, source: :followed
+	has_many :followers, through: :relationship, source: :followers
+	has_many :relationships, foreign_key: "follower_id", dependent: :destroy
 	
 	def self.from_omniauth(auth)
 	  where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|

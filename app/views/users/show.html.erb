@@ -1,0 +1,10 @@
+<h2><%= image_tag(@user.image_url) %><br /><%= @user.name %></h2>
+
+<%= link_to "Follow Me!", new_relationship_path(:followed_user => @user.id), data: { confirm: 'Are you sure?' } %>
+<% @user.tweets.each do |tweet| %>
+	<ul>
+		<li><%= tweet.body %></li>
+	</ul>
+<% end %>
+
+<%= link_to "Back to Profile", root_path %>

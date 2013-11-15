@@ -32,7 +32,7 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-gem "omniauth-facebook", "~> 1.4.0"
+gem "omniauth-facebook", "1.4.0"
 gem 'simple_form'
 gem 'binding_of_caller'
 gem 'better_errors'

@@ -1,0 +1,7 @@
+<h2>Users</h2>
+
+<% @users.each do |user| %>
+	<ul>
+		<li><%= image_tag(user.image_url) %><%= link_to user.name, user %></li>
+	</ul>
+<% end %>
