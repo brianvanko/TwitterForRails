@@ -1,5 +1,5 @@
 <% if @user %>
-	<h2>tweet index</h2>
+	<h2>MAI tweets index</h2>
 
 	<% @tweets.each do |tweet| %>
 		<ul>
@@ -14,7 +14,16 @@
 		<%= f.submit "Tweet", class: 'btn btn-primary' %>
 	<% end %>
 	<br />
+
+<h3> Tweets of Peeps I Follow</h3>
+<% @followed_tweets.each do |f| %>
+	<ul>
+	<li><%= f.body%></li>
+	</ul>
+<% end %>
+
+<br>
 	<%= link_to "All Users", users_all_path %>
 <% else %>
-	<h2>Welcome to Fake Twitter</h2>
+	<h2>Welcome to Fake Twitter, Yo.</h2>
 <% end %>
